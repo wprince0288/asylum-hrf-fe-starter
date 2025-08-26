@@ -28,6 +28,7 @@ export const LandingPage = () => {
 
   const handleReadMore = () => {
     // TODO: navigate to the humanrightsfirst.org homepage
+    window.location.href = "https://humanrightsfirst.org/";
   };
 
   return (
@@ -93,7 +94,7 @@ export const LandingPage = () => {
         </div>
 
         <div className='flex-c'>
-          <button>Read More</button>
+          <button onClick={handleReadMore}>Read More</button>
           <button>Back to Top^</button>
         </div>
       </section>
