@@ -31,6 +31,6 @@ export default function Header() {
         )}
         <LoggingButtons />
       </div>
-    </header>
+        </header>
   );
 }

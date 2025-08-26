@@ -32,19 +32,41 @@ export const LandingPage = () => {
 
   return (
     <div className='flex-c w-[100vw] secondary-c'>
-      <div>Top</div>
+
+      <section className='flex-c'>
+        <div>
+          <h1>
+            Asylum Office Grant Rate Tracker
+          </h1>
+        </div>
+        <div>
+          <h3>
+            The Asylum Office Grant Rate Tracker provides asylum seekers, researchers, policymakers, and the public an interactive tool to explore USCIS data on Asylum Office decisions
+          </h3>
+        </div>
+      </section>
+
+      <div className='flex'>
+        <div><img src={barGraph} />Search Grant Rates By Office</div>
+        <div><img src={pieChart} />Search Grant Rates By Nationality</div>
+        <div><img src={lineGraph} />Search Grant Rates Over Time</div>
+      </div>
+
+      <section>
+        <button>View the Data</button>
+        <button>Download the Data</button>
+      </section>
 
 
       <div className='flex'>
         <div><img src={paperStack} /></div>
-        <div>Human Rights First has created a search tool to give you a user-friendly way to explore a data set of asylum decisions between FY 2016 and May 2021 by the USCIS Asylum Office, which we received through a Freedom of Information Act request. You can search for information on asylum grant rates by year, nationality, and asylum office, visualize the data with charts and heat maps, and download the data set.</div>
+        <p>
+          Human Rights First has created a search tool to give you a user-friendly way to explore a data set of asylum decisions between FY 2016 and May 2021 by the USCIS Asylum Office, which we received through a Freedom of Information Act request. You can search for information on asylum grant rates by year, nationality, and asylum office, visualize the data with charts and heat maps, and download the data set.
+        </p>
       </div>
 
       <div>
-        <div>
-          <h3>
-            Systemic Disparity Insights </h3>
-        </div>
+        <h3>Systemic Disparity Insights </h3>
         <div className='flex'>
           <div>
             <h4>36%</h4>
@@ -60,7 +82,14 @@ export const LandingPage = () => {
           </div>
         </div>
 
-
+        <section className='flex-c'>
+          <div>
+            <button>Read More</button>
+          </div>
+          <div>
+            <button>Back to Top^</button>
+          </div>
+        </section>
 
       </div>
 
