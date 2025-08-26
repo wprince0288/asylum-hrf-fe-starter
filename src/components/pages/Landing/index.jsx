@@ -31,9 +31,9 @@ export const LandingPage = () => {
   };
 
   return (
-    <div className='flex-c w-[100vw] secondary-c'>
+    <main className='flex-c w-[100vw] secondary-c'>
 
-      <section className='flex-c'>
+      <header className='flex-c'>
         <div>
           <h1>
             Asylum Office Grant Rate Tracker
@@ -44,55 +44,60 @@ export const LandingPage = () => {
             The Asylum Office Grant Rate Tracker provides asylum seekers, researchers, policymakers, and the public an interactive tool to explore USCIS data on Asylum Office decisions
           </h3>
         </div>
-      </section>
+      </header>
 
-      <div className='flex'>
-        <div><img src={barGraph} />Search Grant Rates By Office</div>
-        <div><img src={pieChart} />Search Grant Rates By Nationality</div>
-        <div><img src={lineGraph} />Search Grant Rates Over Time</div>
+      <div>
+        <div className='flex'>
+          <div>
+            <img src={barGraph} />Search Grant Rates By Office
+          </div>
+          <div>
+            <img src={pieChart} />Search Grant Rates By Nationality
+          </div>
+          <div>
+            <img src={lineGraph} />Search Grant Rates Over Time
+          </div>
+        </div>
+
+        <section>
+          <button>View the Data</button>
+          <button>Download the Data</button>
+        </section>
       </div>
 
-      <section>
-        <button>View the Data</button>
-        <button>Download the Data</button>
-      </section>
-
 
       <div className='flex'>
-        <div><img src={paperStack} /></div>
+        <div>
+          <img src={paperStack} />
+        </div>
         <p>
           Human Rights First has created a search tool to give you a user-friendly way to explore a data set of asylum decisions between FY 2016 and May 2021 by the USCIS Asylum Office, which we received through a Freedom of Information Act request. You can search for information on asylum grant rates by year, nationality, and asylum office, visualize the data with charts and heat maps, and download the data set.
         </p>
       </div>
 
-      <div>
+      <section className='p-6'>
         <h3>Systemic Disparity Insights </h3>
         <div className='flex'>
-          <div>
+          <article>
             <h4>36%</h4>
             <p>By the end of the Trump administration, the average asylum office grant rate had fallen 36% from an average of 44 percent in fiscal year 2016 to 28 percent in fiscal year 20202.</p>
-          </div>
-          <div>
+          </article>
+          <article>
             <h4>5%</h4>
             <p>The New York asylum office grant rate dropped to 5 percent in fiscal year 2020.</p>
-          </div>
-          <div>
+          </article>
+          <article>
             <h4>6x lower</h4>
             <p>Between fiscal year 2017 and 2020, the New York asylum office's average grant rate was 6 times lower than the San Francisco asylum office.</p>
-          </div>
+          </article>
         </div>
 
-        <section className='flex-c'>
-          <div>
-            <button>Read More</button>
-          </div>
-          <div>
-            <button>Back to Top^</button>
-          </div>
-        </section>
+        <div className='flex-c'>
+          <button>Read More</button>
+          <button>Back to Top^</button>
+        </div>
+      </section>
 
-      </div>
-
-    </div>
+    </main>
   );
 };
