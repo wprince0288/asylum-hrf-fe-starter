@@ -95,7 +95,7 @@ export const LandingPage = () => {
 
         <div className='flex-c'>
           <button onClick={handleReadMore}>Read More</button>
-          <button>Back to Top^</button>
+          <button onClick={scrollToTop}>Back to Top^</button>
         </div>
       </section>
 
