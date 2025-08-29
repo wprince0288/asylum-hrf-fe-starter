@@ -27,9 +27,17 @@ export const LandingPage = () => {
   };
 
   const handleReadMore = () => {
-    // TODO: navigate to the humanrightsfirst.org homepage
     window.location.href = "https://humanrightsfirst.org/";
   };
+
+  const handleViewData = () => {
+    navigate("/graphs");
+  };
+
+  const handleDownladData = () => {
+    downloadCSV();
+  };
+
 
   return (
     <main className='flex-c w-[100vw] secondary-c'>
@@ -61,8 +69,8 @@ export const LandingPage = () => {
         </div>
 
         <section>
-          <button>View the Data</button>
-          <button>Download the Data</button>
+          <button onClick={handleViewData}>View the Data</button>
+          <button onClick={handleDownladData}>Download the Data</button>
         </section>
       </div>
 
