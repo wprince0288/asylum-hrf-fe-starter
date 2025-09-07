@@ -68,9 +68,19 @@ export const LandingPage = () => {
           </div>
         </div>
 
-        <section>
-          <button onClick={handleViewData}>View the Data</button>
-          <button onClick={handleDownladData}>Download the Data</button>
+        <section className="flex justify-center space-x-8">
+          <button 
+          onClick={handleViewData}
+          className="px-6 py-2 bg-[rgb(170,170,170)] font bold text-lg text-white square-lg hover:bg-gray-100 transtion"
+          >
+            View the Data
+            </button>
+          <button 
+          onClick={handleDownladData}
+          className="px-4 py-2 bg-[rgb(170,170,170)] font bold text-lg text-white square-lg hover:bg-gray-100 transtion"
+          >
+            Download the Data
+            </button>
         </section>
       </div>
 
