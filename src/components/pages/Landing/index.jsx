@@ -42,47 +42,56 @@ export const LandingPage = () => {
   return (
     <main className='flex-c w-[100vw] secondary-c'>
 
-      <header className='flex-c'>
+      <header className='flex-c mx-auto'>
         <div>
-          <h1>
+          <h1 class="text 6x1 mb-8 text-black">
             Asylum Office Grant Rate Tracker
           </h1>
         </div>
         <div>
-          <h3>
+          <h3 class="text-white">
             The Asylum Office Grant Rate Tracker provides asylum seekers, researchers, policymakers, and the public an interactive tool to explore USCIS data on Asylum Office decisions
           </h3>
         </div>
       </header>
 
-      <div>
-        <div className='flex'>
-          <div>
-            <img src={barGraph} />Search Grant Rates By Office
-          </div>
-          <div>
-            <img src={pieChart} />Search Grant Rates By Nationality
-          </div>
-          <div>
-            <img src={lineGraph} />Search Grant Rates Over Time
-          </div>
-        </div>
+      {/* <div> */}
+        <section class="graphs flex-c pt-10">
+          <div class="flex-c">
+            <div class="flex justify-center m-14 gap-20 text-2x1">
+              <div class="flex-c gap-3">
+                <img src={barGraph} alt class="h-[300px] w[500px]" />
+                <h3>Search Grant Rates By Office</h3>
+              </div>
+              <div class="flex-c gap-3">
+                <img src={pieChart} alt class="h-[300px] w[500px]" />
+                <h3>Search Grant Rates By Nationality</h3>
+              </div>
+              <div class="flex-c gap-3">
+                <img src={lineGraph} alt class="h-[300px] w[500px]" />
+                <h3>Search Grant Rates Over Time</h3>
+              </div>
+            </div>
 
-        <section className="flex justify-center space-x-8">
-          <button 
-          onClick={handleViewData}
-          className="px-6 py-2 bg-[rgb(170,170,170)] font bold text-lg text-white square-lg hover:bg-gray-100 transtion"
-          >
-            View the Data
-            </button>
-          <button 
-          onClick={handleDownladData}
-          className="px-4 py-2 bg-[rgb(170,170,170)] font bold text-lg text-white square-lg hover:bg-gray-100 transtion"
-          >
-            Download the Data
-            </button>
+            <section className="flex justify-center space-x-8">
+              <button
+                onClick={handleViewData}
+                className="px-[10px] py-[5px] bg-[rgb(170,170,170)] font-semibold text-md text-white square-lg"
+              >
+                View the Data
+              </button>
+              <button
+                onClick={handleDownladData}
+                className="px-[10px] py-[5px] bg-[rgb(170,170,170)] font-semibold text-md text-white square-lg"
+              >
+                Download the Data
+              </button>
+            </section>
+
+          </div>
         </section>
-      </div>
+
+      {/* </div> */}
 
 
       <div className='flex'>
@@ -117,6 +126,6 @@ export const LandingPage = () => {
         </div>
       </section>
 
-    </main>
+    </main >
   );
 };
