@@ -40,56 +40,56 @@ export const LandingPage = () => {
 
 
   return (
-    <main className='flex-c w-[100vw] secondary-c'>
+    <main className="flex-c w-[100vw] secondary-c">
 
-      <header className='flex-c mx-auto'>
-        <div>
-          <h1 class="text 6x1 mb-8 text-black">
+      <header className="flex flex-col primary-c pt-4 pb-8 bg-[rgb(102,101,85)]">
+        <div className="flex-c mx-auto">
+          <h1 className="text-6xl mb-8 text-white">
             Asylum Office Grant Rate Tracker
           </h1>
         </div>
         <div>
-          <h3 class="text-white">
+          <h3 className="text-white">
             The Asylum Office Grant Rate Tracker provides asylum seekers, researchers, policymakers, and the public an interactive tool to explore USCIS data on Asylum Office decisions
           </h3>
         </div>
       </header>
 
       {/* <div> */}
-        <section class="graphs flex-c pt-10">
-          <div class="flex-c">
-            <div class="flex justify-center m-14 gap-20 text-2x1">
-              <div class="flex-c gap-3">
-                <img src={barGraph} alt class="h-[300px] w[500px]" />
-                <h3>Search Grant Rates By Office</h3>
-              </div>
-              <div class="flex-c gap-3">
-                <img src={pieChart} alt class="h-[300px] w[500px]" />
-                <h3>Search Grant Rates By Nationality</h3>
-              </div>
-              <div class="flex-c gap-3">
-                <img src={lineGraph} alt class="h-[300px] w[500px]" />
-                <h3>Search Grant Rates Over Time</h3>
-              </div>
+      <section class="graphs flex-c pt-10">
+        <div class="flex-c">
+          <div class="flex justify-center m-14 gap-20 text-2x1">
+            <div class="flex-c gap-3">
+              <img src={barGraph} alt class="h-[300px] w[500px]" />
+              <h3>Search Grant Rates By Office</h3>
             </div>
-
-            <section className="flex justify-center space-x-8">
-              <button
-                onClick={handleViewData}
-                className="px-[10px] py-[5px] bg-[rgb(170,170,170)] font-semibold text-md text-white square-lg"
-              >
-                View the Data
-              </button>
-              <button
-                onClick={handleDownladData}
-                className="px-[10px] py-[5px] bg-[rgb(170,170,170)] font-semibold text-md text-white square-lg"
-              >
-                Download the Data
-              </button>
-            </section>
-
+            <div class="flex-c gap-3">
+              <img src={pieChart} alt class="h-[300px] w[500px]" />
+              <h3>Search Grant Rates By Nationality</h3>
+            </div>
+            <div class="flex-c gap-3">
+              <img src={lineGraph} alt class="h-[300px] w[500px]" />
+              <h3>Search Grant Rates Over Time</h3>
+            </div>
           </div>
-        </section>
+
+          <section className="flex justify-center space-x-8">
+            <button
+              onClick={handleViewData}
+              className="px-[10px] py-[5px] bg-[rgb(170,170,170)] font-semibold text-md text-white square-lg"
+            >
+              View the Data
+            </button>
+            <button
+              onClick={handleDownladData}
+              className="px-[10px] py-[5px] bg-[rgb(170,170,170)] font-semibold text-md text-white square-lg"
+            >
+              Download the Data
+            </button>
+          </section>
+
+        </div>
+      </section>
 
       {/* </div> */}
 
