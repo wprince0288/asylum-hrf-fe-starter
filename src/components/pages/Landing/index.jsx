@@ -55,53 +55,47 @@ export const LandingPage = () => {
         </div>
       </header>
 
-      {/* <div> */}
-      <section class="graphs flex-c pt-10">
-        <div class="flex-c">
-          <div class="flex justify-center m-14 gap-20 text-2x1">
-            <div class="flex-c gap-3">
-              <img src={barGraph} alt class="h-[300px] w[500px]" />
+      <section className="graphs flex-c pt-10">
+        <div className="flex-c">
+          <div className="flex justify-center m-14 gap-20 text-2xl">
+            <div className="flex-c gap-3">
+              <img src={barGraph} alt className="h-[300px] w[500px]" />
               <h3>Search Grant Rates By Office</h3>
             </div>
-            <div class="flex-c gap-3">
-              <img src={pieChart} alt class="h-[300px] w[500px]" />
+            <div className="flex-c gap-3">
+              <img src={pieChart} alt className="h-[300px] w[500px]" />
               <h3>Search Grant Rates By Nationality</h3>
             </div>
-            <div class="flex-c gap-3">
-              <img src={lineGraph} alt class="h-[300px] w[500px]" />
+            <div className="flex-c gap-3">
+              <img src={lineGraph} alt className="h-[300px] w[500px]" />
               <h3>Search Grant Rates Over Time</h3>
             </div>
           </div>
-
-          <section className="flex justify-center space-x-8">
+          <section className="flex align-center mx-auto gap-8">
             <button
               onClick={handleViewData}
-              className="px-[10px] py-[5px] bg-[rgb(170,170,170)] font-semibold text-md text-white square-lg"
-            >
+              className="px-[10px] py-[5px] bg-[rgb(170,170,170)] font-semibold text-md text-white">
               View the Data
             </button>
             <button
               onClick={handleDownladData}
-              className="px-[10px] py-[5px] bg-[rgb(170,170,170)] font-semibold text-md text-white square-lg"
-            >
+              className="px-[10px] py-[5px] bg-[rgb(170,170,170)] font-semibold text-md text-white">
               Download the Data
             </button>
           </section>
-
         </div>
       </section>
 
-      {/* </div> */}
-
-
-      <div className='flex'>
-        <div>
-          <img src={paperStack} />
+      <section className='middle-section flex'>
+        <div className="flex-1 hrf-img-container content-center p-20">
+          <img src={paperStack} alt="Human Rights First" class="hrf-img rounded-2xl h-[70%] w-[100%]" />
         </div>
-        <p>
-          Human Rights First has created a search tool to give you a user-friendly way to explore a data set of asylum decisions between FY 2016 and May 2021 by the USCIS Asylum Office, which we received through a Freedom of Information Act request. You can search for information on asylum grant rates by year, nationality, and asylum office, visualize the data with charts and heat maps, and download the data set.
-        </p>
-      </div>
+        <div className="middle-section-text-container flex-1 content-center p-20">
+          <p className="text-xl">
+            Human Rights First has created a search tool to give you a user-friendly way to explore a data set of asylum decisions between FY 2016 and May 2021 by the USCIS Asylum Office, which we received through a Freedom of Information Act request. You can search for information on asylum grant rates by year, nationality, and asylum office, visualize the data with charts and heat maps, and download the data set.
+          </p>
+        </div>
+      </section>
 
       <section className='p-6'>
         <h3>Systemic Disparity Insights </h3>
