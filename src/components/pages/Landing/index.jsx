@@ -97,9 +97,11 @@ export const LandingPage = () => {
         </div>
       </section>
 
-      <section className='p-6'>
-        <h3>Systemic Disparity Insights </h3>
-        <div className='flex'>
+      <section className="insights-section flex-c gap-16">
+        <div className="insights-section-header">
+          <h3 class="text-5xl">Systemic Disparity Insights </h3>
+        </div>
+        <div className="insights-section flex justify-center m-14 gap-20 text-2xl">
           <article>
             <h4>36%</h4>
             <p>By the end of the Trump administration, the average asylum office grant rate had fallen 36% from an average of 44 percent in fiscal year 2016 to 28 percent in fiscal year 20202.</p>
@@ -113,12 +115,12 @@ export const LandingPage = () => {
             <p>Between fiscal year 2017 and 2020, the New York asylum office's average grant rate was 6 times lower than the San Francisco asylum office.</p>
           </article>
         </div>
-
-        <div className='flex-c'>
-          <button onClick={handleReadMore}>Read More</button>
-          <button onClick={scrollToTop}>Back to Top^</button>
-        </div>
       </section>
+
+      <div className='flex-c'>
+        <button onClick={handleReadMore}>Read More</button>
+        <button onClick={scrollToTop}>Back to Top^</button>
+      </div>
 
     </main >
   );
