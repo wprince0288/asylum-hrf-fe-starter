@@ -101,20 +101,41 @@ export const LandingPage = () => {
         <div className="insights-section-header">
           <h3 class="text-5xl">Systemic Disparity Insights </h3>
         </div>
+
         <div className="insights-section flex justify-center m-14 gap-20 text-2xl">
-          <article>
-            <h4>36%</h4>
-            <p>By the end of the Trump administration, the average asylum office grant rate had fallen 36% from an average of 44 percent in fiscal year 2016 to 28 percent in fiscal year 20202.</p>
-          </article>
-          <article>
-            <h4>5%</h4>
-            <p>The New York asylum office grant rate dropped to 5 percent in fiscal year 2020.</p>
-          </article>
-          <article>
-            <h4>6x lower</h4>
-            <p>Between fiscal year 2017 and 2020, the New York asylum office's average grant rate was 6 times lower than the San Francisco asylum office.</p>
-          </article>
+
+          <div className="flex-c-1 gap-12">
+            <article class="header">
+              <h4 className="text-4xl">36%</h4>
+            </article>
+            <div class="content">
+              <p className="text-lg">By the end of the Trump administration, the average asylum office grant rate had fallen 36% from an average of 44 percent in fiscal year 2016 to 28 percent in fiscal year 20202.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex-c-1 gap-12">
+            <article class="header">
+              <h4 className="text-4xl">5%</h4>
+            </article>
+            <div class="content">
+              <p className="text-lg">The New York asylum office grant rate dropped to 5 percent in fiscal year 2020.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex-c-1 gap-12">
+            <article class="header">
+              <h4 className="text-4xl">6x lower</h4>
+            </article>
+            <div class="content">
+              <p className="text-lg">Between fiscal year 2017 and 2020, the New York asylum office's average grant rate was 6 times lower than the San Francisco asylum office.
+              </p>
+            </div>
+          </div>
+
         </div>
+
       </section>
 
       <div className='flex-c'>
