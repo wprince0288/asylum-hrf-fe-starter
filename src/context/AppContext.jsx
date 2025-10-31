@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import testData from '../data/test_data.json';
+// import testData from '../data/test_data.json';
 import { useLocalStorage } from '../hooks/useLocalStorage.js';
 
 const AppContext = createContext({});
@@ -17,16 +17,28 @@ const useAppContextProvider = () => {
 
   useLocalStorage({ graphData, setGraphData });
 
-  const getFiscalData = () => {
+  const BASE_URL = 'https://asylum-be.onrender.com';
+
+  const getFiscalData = async () => {
     // TODO: Replace this with functionality to retrieve the data from the fiscalSummary endpoint
-    const fiscalDataRes = testData;
-    return fiscalDataRes;
+    try {
+      const response = await axios.get(`${BASE_URL}/fiscalSummary`);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching fiscal data:', error);
+      return null;
+    }
   };
 
   const getCitizenshipResults = async () => {
     // TODO: Replace this with functionality to retrieve the data from the citizenshipSummary endpoint
-    const citizenshipRes = testData.citizenshipResults;
-    return citizenshipRes;
+    try {
+      const response = await axios.get(`${BASE_URL}/citizenshipSummary`);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching citizenship data:', error);
+      return null;
+    }
   };
 
   const updateQuery = async () => {
@@ -35,7 +47,26 @@ const useAppContextProvider = () => {
 
   const fetchData = async () => {
     // TODO: fetch all the required data and set it to the graphData state
+    try {
+      const [fiscalData, citizenshipData] = await Promise.all([
+        getFiscalData(),
+        getCitizenshipResults(),
+      ]);
+      if (fiscalData && citizenshipData) {
+        setGraphData({
+          ...fiscalData,
+          citizenshipResults: citizenshipData.citizenshipResults,
+        });
+      } else {
+        console.warn('Some data could not be loaded.');
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    } finally {
+      setIsDataLoading(false);
+    }
   };
+
 
   const clearQuery = () => {
     setGraphData({});
