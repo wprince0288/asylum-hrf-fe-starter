@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-// import testData from '../data/test_data.json';
 import { useLocalStorage } from '../hooks/useLocalStorage.js';
 
 const AppContext = createContext({});
@@ -12,8 +11,9 @@ const AppContext = createContext({});
  * - Populate the graphs with the stored data
  */
 const useAppContextProvider = () => {
-  const [graphData, setGraphData] = useState(testData);
+  const [graphData, setGraphData] = useState({});
   const [isDataLoading, setIsDataLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useLocalStorage({ graphData, setGraphData });
 
@@ -26,6 +26,7 @@ const useAppContextProvider = () => {
       return response.data;
     } catch (error) {
       console.error('Error fetching fiscal data:', error);
+      setError(error);
       return null;
     }
   };
@@ -37,53 +38,48 @@ const useAppContextProvider = () => {
       return response.data;
     } catch (error) {
       console.error('Error fetching citizenship data:', error);
+      setError(error);
       return null;
     }
   };
 
-  const updateQuery = async () => {
-    setIsDataLoading(true);
-  };
-
   const fetchData = async () => {
     // TODO: fetch all the required data and set it to the graphData state
+    setIsDataLoading(true);
     try {
       const [fiscalData, citizenshipData] = await Promise.all([
         getFiscalData(),
         getCitizenshipResults(),
       ]);
       if (fiscalData && citizenshipData) {
-        setGraphData({
-          ...fiscalData,
-          citizenshipResults: citizenshipData.citizenshipResults,
-        });
+        const normalizedData = {
+          yearResults: fiscalData.yearResults || fiscalData.data || [],
+          citizenshipResults: citizenshipData.citizenshipResults || citizenshipData.data || [],
+        };
+        setGraphData(normalizedData);
       } else {
         console.warn('Some data could not be loaded.');
       }
-    } catch (error) {
-      console.error('Error fetching data:', error);
+    } catch (err) {
+      console.error('Error fetching data:', err);
+      setError(err);
     } finally {
       setIsDataLoading(false);
     }
   };
 
+  useEffect(() => { fetchData(); }, []);
 
-  const clearQuery = () => {
-    setGraphData({});
-  };
-
-  const getYears = () => graphData?.yearResults?.map(({ fiscal_year }) => Number(fiscal_year)) ?? [];
-
-  useEffect(() => {
-    if (isDataLoading) {
-      fetchData();
-    }
-  }, [isDataLoading]);
+  const updateQuery = () => fetchData();
+  const clearQuery = () => setGraphData({});
+  const getYears = () =>
+    graphData?.yearResults?.map(({ fiscal_year }) => Number(fiscal_year)) ?? [];
 
   return {
     graphData,
     setGraphData,
     isDataLoading,
+    error,
     updateQuery,
     clearQuery,
     getYears,
