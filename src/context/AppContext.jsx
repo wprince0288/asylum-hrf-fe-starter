@@ -16,10 +16,12 @@ const useAppContextProvider = () => {
   const [error, setError] = useState(null);
 
   useLocalStorage({ graphData, setGraphData });
+  // const [storedValue, setStoredValue] = useLocalStorage("graphData", {})
 
   const BASE_URL = 'https://asylum-be.onrender.com';
 
   const getFiscalData = async () => {
+    
     // TODO: Replace this with functionality to retrieve the data from the fiscalSummary endpoint
     try {
       const response = await axios.get(`${BASE_URL}/fiscalSummary`);
