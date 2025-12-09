@@ -31,7 +31,7 @@ You must:
 
 4. Make this project your own, but keep the integrity of the main files so that the app can render and work when you wish to present it. 
 
-## Deliverables 
+## Deliverables  
 
 Submit the following in your course: 
 
