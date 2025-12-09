@@ -2,7 +2,6 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import { App } from './App.jsx';
 import { ProvideAppContext } from './context/AppContext.jsx';
-
 import { Auth0Provider } from '@auth0/auth0-react';
 
 const AUTH_DOMAIN = import.meta.env.VITE_AUTH_DOMAIN;
@@ -21,7 +20,7 @@ createRoot(document.getElementById('root')).render(
     clientId={AUTH_CLIENT_ID}
     authorizationParams={{
       redirect_uri: window.location.origin,
-      audience: import.meta.env.VITE_AUTH_AUDIENCE, // optional, only if using API access
+      audience: import.meta.env.VITE_AUTH_AUDIENCE
     }}
   >
     <ProvideAppContext>
