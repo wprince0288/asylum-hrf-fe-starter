@@ -6,6 +6,7 @@ import { Auth0Provider } from '@auth0/auth0-react';
 
 const AUTH_DOMAIN = import.meta.env.VITE_AUTH_DOMAIN;
 const AUTH_CLIENT_ID = import.meta.env.VITE_AUTH_CLIENT_ID;
+const AUTH_AUDIENCE = import.meta.env.VITE_AUTH_AUDIENCE;
 
 /**
  * TODO: Ticket 3:
@@ -20,7 +21,7 @@ createRoot(document.getElementById('root')).render(
     clientId={AUTH_CLIENT_ID}
     authorizationParams={{
       redirect_uri: window.location.origin,
-      audience: import.meta.env.VITE_AUTH_AUDIENCE
+      audience: AUTH_AUDIENCE
     }}
   >
     <ProvideAppContext>

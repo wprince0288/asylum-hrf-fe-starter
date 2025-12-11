@@ -4,7 +4,7 @@ import { useAuth0 } from "@auth0/auth0-react";
  * Implement authentication and logging functionality using Auth0
  */
 
-export const LoggingButtons = () => {
+export function LoggingButtons() {
   // TODO: Replace these with Auth0 functionality
   const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
 
@@ -12,8 +12,8 @@ export const LoggingButtons = () => {
     if (isAuthenticated) {
       logout({
         logoutParams: {
-          returnTo: window.location.orgin, //retunr to app after logout
-        },
+          returnTo: window.location.orgin
+        }
       });
     } else {
       loginWithRedirect();
@@ -21,8 +21,8 @@ export const LoggingButtons = () => {
   };
 
   return (
-    <button className='nav-btn  px-4 py-1' onClick={handleLogging}>
-      {isAuthenticated ? "Log Out" : "Log In"}
+    <button onClick={handleLogging} className="nav-btn">
+      {isAuthenticated ? "Logout" : "Login"}
     </button>
   );
 };
