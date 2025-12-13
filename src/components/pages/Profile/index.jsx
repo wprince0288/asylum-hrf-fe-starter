@@ -17,7 +17,9 @@ const Profile = () => {
   }
 
   if (!isAuthenticated) {
-    return <div className="text-center p-4 text-xl">You must be logged in to view this page nerd!</div>
+    return (
+      <div className="text-center p-4 text-xl">You must be logged in to view this page nerd!</div>
+    );
   }
 
   return (
@@ -27,10 +29,11 @@ const Profile = () => {
         alt={user.name}
         className="w-32 h-32 rounded-full shadow-lg mb-6"
       />
-      <h1></h1>
-      <p></p>
-      <div>
-        <pre></pre>
+      <h1 className="text-2xl font-bold">{user.name}</h1>
+      <p className="text-lg text-gray-300">{user.email}</p>
+
+      <div className="bg-gray-800 p-4 rounded-lg w-full max-w-xl mt-4">
+        <pre className="text-sm overflow-x-auto">{JSON.stringify(user, null, 2)}</pre>
       </div>
     </div>
   );

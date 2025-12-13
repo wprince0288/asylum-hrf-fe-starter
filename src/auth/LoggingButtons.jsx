@@ -12,7 +12,7 @@ export function LoggingButtons() {
     if (isAuthenticated) {
       logout({
         logoutParams: {
-          returnTo: window.location.orgin
+          returnTo: window.location.origin
         }
       });
     } else {
