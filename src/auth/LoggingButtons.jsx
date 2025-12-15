@@ -21,7 +21,7 @@ export function LoggingButtons() {
 
   return (
     <button onClick={handleLogging} className="nav-btn">
-      {isAuthenticated ? "Logout" : "Log In"}
+      {isAuthenticated ? "Log Out" : "Log In"}
     </button>
   );
 };
