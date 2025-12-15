@@ -24,7 +24,7 @@ export const LandingPage = () => {
         window.scrollBy(0, scrollStep);
       }
     }, 10); // Adjust the interval time for smoothness
-  };
+  };  
 
   const handleReadMore = () => {
     window.location.href = "https://humanrightsfirst.org/";

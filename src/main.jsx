@@ -21,7 +21,7 @@ createRoot(document.getElementById('root')).render(
     clientId={AUTH_CLIENT_ID}
     authorizationParams={{
       redirect_uri: window.location.origin,
-      audience: AUTH_AUDIENCE
+      // audience: AUTH_AUDIENCE
     }}
   >
     <ProvideAppContext>
