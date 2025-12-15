@@ -5,7 +5,6 @@ import { useAuth0 } from "@auth0/auth0-react";
  */
 
 export function LoggingButtons() {
-  // TODO: Replace these with Auth0 functionality
   const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
 
   const handleLogging = () => {
@@ -22,7 +21,7 @@ export function LoggingButtons() {
 
   return (
     <button onClick={handleLogging} className="nav-btn">
-      {isAuthenticated ? "Logout" : "Login"}
+      {isAuthenticated ? "Logout" : "Log In"}
     </button>
   );
 };
