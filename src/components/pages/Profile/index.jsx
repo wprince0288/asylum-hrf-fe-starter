@@ -9,8 +9,9 @@
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Profile = () => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated, isLoading, logout, loginWithRedirect } = useAuth0();
 
+  
   if (isLoading) {
     return <div className="text-center p-4 text-xl">Loading...</div>;
   }
