@@ -23,7 +23,7 @@ export const LandingPage = () => {
       } else {
         window.scrollBy(0, scrollStep);
       }
-    }, 10); // Adjust the interval time for smoothness
+    }, 8); // Adjust the interval time for smoothness
   };  
 
   const handleReadMore = () => {
