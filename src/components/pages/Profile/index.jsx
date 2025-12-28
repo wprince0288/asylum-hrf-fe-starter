@@ -18,7 +18,7 @@ const Profile = () => {
 
   if (!isAuthenticated) {
     return (
-      <div className="text-center p-4 text-xl">You must be logged in to view this page nerd!</div>
+      <div className="text-center p-4 text-xl">This is not the page you are looking for. Please login!</div>
     );
   }
 

@@ -4,25 +4,17 @@ import { useLocalStorage } from '../hooks/useLocalStorage.js';
 
 const AppContext = createContext({});
 
-/**
- * TODO: Ticket 2:
- * - Use axios to fetch the data
- * - Store the data
- * - Populate the graphs with the stored data
- */
 const useAppContextProvider = () => {
   const [graphData, setGraphData] = useState({});
   const [isDataLoading, setIsDataLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useLocalStorage({ graphData, setGraphData });
-  // const [storedValue, setStoredValue] = useLocalStorage("graphData", {})
 
   const BASE_URL = 'https://asylum-be.onrender.com';
 
   const getFiscalData = async () => {
-    
-    // TODO: Replace this with functionality to retrieve the data from the fiscalSummary endpoint
+
     try {
       const response = await axios.get(`${BASE_URL}/fiscalSummary`);
       return response.data;
@@ -34,7 +26,6 @@ const useAppContextProvider = () => {
   };
 
   const getCitizenshipResults = async () => {
-    // TODO: Replace this with functionality to retrieve the data from the citizenshipSummary endpoint
     try {
       const response = await axios.get(`${BASE_URL}/citizenshipSummary`);
       return response.data;
@@ -46,7 +37,6 @@ const useAppContextProvider = () => {
   };
 
   const fetchData = async () => {
-    // TODO: fetch all the required data and set it to the graphData state
     setIsDataLoading(true);
     try {
       const [fiscalData, citizenshipData] = await Promise.all([

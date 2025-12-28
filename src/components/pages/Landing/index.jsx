@@ -4,7 +4,6 @@ import barGraph from '../../../assets/bar-graph.png';
 import paperStack from '../../../assets/paper-stack.jpg';
 import { useNavigate } from 'react-router-dom';
 import { useDownloadData } from '../../../hooks/useDownloadData.js';
-import { decodeBase64 } from '../../../utils/decodeBase64.js';
 
 /**
  * TODO: Ticket 1:
@@ -16,15 +15,15 @@ export const LandingPage = () => {
   const { downloadCSV } = useDownloadData();
 
   const scrollToTop = () => {
-    let scrollStep = -window.scrollY / 20; // Adjust the divisor for speed
+    let scrollStep = -window.scrollY / 15; // Adjust the divisor for speed
     let scrollInterval = setInterval(() => {
       if (window.scrollY === 0) {
         clearInterval(scrollInterval);
       } else {
         window.scrollBy(0, scrollStep);
       }
-    }, 8); // Adjust the interval time for smoothness
-  };  
+    }, 1); // Adjust the interval time for smoothness
+  };
 
   const handleReadMore = () => {
     window.location.href = "https://humanrightsfirst.org/";
@@ -34,7 +33,7 @@ export const LandingPage = () => {
     navigate("/graphs");
   };
 
-  const handleDownladData = () => {
+  const handleDownloadData = () => {
     downloadCSV();
   };
 
@@ -59,15 +58,15 @@ export const LandingPage = () => {
         <div className="flex-c">
           <div className="flex justify-center m-14 gap-20 text-2xl">
             <div className="flex-c gap-3">
-              <img src={barGraph} alt="Bar graph icon" className="h-[300px] w[500px]" />
+              <img src={barGraph} alt="Bar graph icon" className="h-[300px] w-[500px]" />
               <h3>Search Grant Rates By Office</h3>
             </div>
             <div className="flex-c gap-3">
-              <img src={pieChart} alt="Pie chart icon" className="h-[300px] w[500px]" />
+              <img src={pieChart} alt="Pie chart icon" className="h-[300px] w-[500px]" />
               <h3>Search Grant Rates By Nationality</h3>
             </div>
             <div className="flex-c gap-3">
-              <img src={lineGraph} alt="Line graph icon" className="h-[300px] w[500px]" />
+              <img src={lineGraph} alt="Line graph icon" className="h-[300px] w-[500px]" />
               <h3>Search Grant Rates Over Time</h3>
             </div>
           </div>
@@ -78,7 +77,7 @@ export const LandingPage = () => {
               View the Data
             </button>
             <button
-              onClick={handleDownladData}
+              onClick={handleDownloadData}
               className="px-[10px] py-[5px] bg-[rgb(170,170,170)] font-semibold text-md text-white">
               Download the Data
             </button>
@@ -110,7 +109,7 @@ export const LandingPage = () => {
             </article>
             <div className="content">
               <p className="text-lg">
-                By the end of the Trump administration, the average asylum office grant rate had fallen 36% from an average of 44 percent in fiscal year 2016 to 28 percent in fiscal year 20202.
+                By the end of the Trump administration, the average asylum office grant rate had fallen 36% from an average of 44 percent in fiscal year 2016 to 28 percent in fiscal year 2020.
               </p>
             </div>
           </div>
