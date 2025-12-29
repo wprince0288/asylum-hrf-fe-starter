@@ -20,9 +20,9 @@ createRoot(document.getElementById('root')).render(
     clientId={AUTH_CLIENT_ID}
     authorizationParams={{
       redirect_uri: window.location.origin,
-         }}
-         cacheLocation="localstorage"
-         useRefreshtokens={true}
+    }}
+    cacheLocation="localstorage"
+    useRefreshtokens={true}
   >
     <ProvideAppContext>
       <App />

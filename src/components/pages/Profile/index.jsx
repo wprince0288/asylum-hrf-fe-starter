@@ -11,7 +11,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Profile = () => {
   const { user, isAuthenticated, isLoading, logout, loginWithRedirect } = useAuth0();
 
-  
+
   if (isLoading) {
     return <div className="text-center p-4 text-xl">Loading...</div>;
   }
@@ -32,9 +32,6 @@ const Profile = () => {
       <h1 className="text-2xl font-bold">{user.name}</h1>
       <p className="text-lg text-gray-300">{user.email}</p>
 
-      <div className="bg-gray-800 p-4 rounded-lg w-full max-w-xl mt-4">
-        <pre className="text-sm overflow-x-auto">{JSON.stringify(user, null, 2)}</pre>
-      </div>
     </div>
   );
 };
